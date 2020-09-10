@@ -1,4 +1,5 @@
 var tdElements = document.getElementsByTagName('TD');
+var isO = false;
 
 for(var tdElement of tdElements) {
   tdElement. addEventListener('click', handleClick);
@@ -6,5 +7,11 @@ for(var tdElement of tdElements) {
 
 function handleClick(event) {
   var target = event.target;
-  target.innerHTML = 'X';
+  if (isO) {
+    target.innerHTML = 'O';
+    isO = false;
+  } else {
+   target.innerHTML = 'X'; 
+   isO = true;
+  }
 } 
